@@ -1,10 +1,18 @@
 type AppRoute =
-  | {
-    type: "page";
-    path?: string;
-    index?: boolean;
-    element: React.ReactElement;
-  }
+  | (
+    | {
+      type: "page";
+      index: true;
+      path?: never;
+      element: React.ReactElement;
+    }
+    | {
+      type: "page";
+      path: string;
+      index?: false;
+      element: React.ReactElement;
+    }
+  )
   | {
     type: "layout";
     path?: string;
