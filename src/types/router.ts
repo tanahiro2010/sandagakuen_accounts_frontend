@@ -1,6 +1,6 @@
 type BaseRoute = {
   path: string
-  children: Array<Route>
+  children?: Array<Route>
 }
 
 type PageRoute = BaseRoute & {
@@ -11,6 +11,7 @@ type PageRoute = BaseRoute & {
 type LayoutRoute = BaseRoute & {
   type: "layout",
   layout: React.ReactElement
+  element: Array<Route>
 }
 
 type Route = PageRoute | LayoutRoute
