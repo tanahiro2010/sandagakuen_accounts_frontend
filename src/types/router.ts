@@ -1,19 +1,20 @@
-type BaseRoute = {
-  path: string
-  children?: Array<Route>
-}
+type AppRoute =
+  | {
+    type: "page";
+    path?: string;
+    index?: boolean;
+    element: React.ReactElement;
+  }
+  | {
+    type: "layout";
+    path?: string;
+    element: React.ReactElement;
+    children: AppRoute[];
+  }
+  | {
+    type: "group";
+    path?: string;
+    children: AppRoute[];
+  };
 
-type PageRoute = BaseRoute & {
-  type: "page"
-  page: React.ReactElement
-}
-
-type LayoutRoute = BaseRoute & {
-  type: "layout",
-  layout: React.ReactElement
-  element: Array<Route>
-}
-
-type Route = PageRoute | LayoutRoute
-
-export type { BaseRoute, PageRoute, LayoutRoute, Route }
+export type { AppRoute }
