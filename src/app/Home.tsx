@@ -77,7 +77,7 @@ const Home: React.FC = () => {
     } catch (e) {
       console.error('Logout error', e)
     } finally {
-      navigate('/login')
+      navigate('/_auth/login')
     }
   }
 
