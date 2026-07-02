@@ -18,7 +18,7 @@ const AuthCallback: React.FC = () => {
   }, [searchParams, navigate])
 
   const handleGoBack = () => {
-    navigate('/login')
+    navigate('/_auth/login')
   }
 
   return (
