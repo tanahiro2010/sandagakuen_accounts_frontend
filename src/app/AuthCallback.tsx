@@ -11,7 +11,7 @@ const AuthCallback: React.FC = () => {
   useEffect(() => {
     const error = searchParams.get('error')
     if (error) {
-      setErrorMsg(decodeURIComponent(error))
+      setErrorMsg(error)
     } else {
       navigate('/')
     }
